@@ -83,7 +83,7 @@ cargo test --workspace
 **Verification.** These commands were run against current `main`:
 
 - `cargo test -p token_transfer` — **8 passed / 0 failed**
-- `cargo test -p group_treasury` — **40 passed / 0 failed** (6 ignored)
+- `cargo test -p group_treasury` — **43 passed / 0 failed** (3 ignored)
 - `cargo test -p proposals` — 20 tests (see Windows note)
 
 > **Windows note.** On Windows with the GNU (mingw) toolchain, `cargo test -p proposals` can fail while **linking the native `group_treasury.dll`** build of the `group_treasury` dev-dependency with `ld: error: export ordinal too large`. This is a mingw-w64 linker limitation with soroban-sdk's cdylib symbol table, not a contract-code failure — the test code compiles cleanly and all tests pass on the Linux CI that this repo uses. If you hit it, run the tests under Linux/WSL or rely on the `contracts-ci` GitHub Action.
