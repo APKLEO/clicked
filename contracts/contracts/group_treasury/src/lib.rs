@@ -397,7 +397,7 @@ impl GroupTreasuryContract {
             .get(&DataKey::ProposalCount)
             .unwrap_or(0);
         let mut proposals: Vec<WithdrawProposal> = Vec::new(&env);
-        for id in 1..=count {
+        for id in 0..count {
             if let Some(proposal) = env.storage().instance().get(&DataKey::Proposal(id)) {
                 proposals.push_back(proposal);
             }
@@ -413,7 +413,7 @@ impl GroupTreasuryContract {
             .get(&DataKey::ProposalCount)
             .unwrap_or(0);
         let mut proposals: Vec<WithdrawProposal> = Vec::new(&env);
-        for id in 1..=count {
+        for id in 0..count {
             if let Some(proposal) = env
                 .storage()
                 .instance()
